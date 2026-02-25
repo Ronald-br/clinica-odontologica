@@ -55,5 +55,27 @@ A principal diferença entre a execução local e via Docker é que, utilizando 
 
 ## Comandos Utilizados
 
-Para executar o projeto:
+Para executar o projeto, siga os passos abaixo:
+
+1️⃣ Certifique-se de que o Docker esteja instalado na máquina.
+
+2️⃣ Clone o repositório:
+
+git clone https://github.com/Ronald-br/clinica-odontologica.git
+
+3️⃣ Acesse a pasta do projeto:
+
+cd clinica-odontologica
+
+4️⃣ Execute o comando abaixo para construir a imagem e iniciar o container:
+
+docker-compose up --build
+
+5️⃣ Após a inicialização, acesse no navegador:
+
+http://localhost:8080
+
+Para encerrar a execução do container, utilize:
+
+docker-compose down
 
