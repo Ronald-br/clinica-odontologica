@@ -10,8 +10,14 @@ class PacienteRepository:
         db.commit()
         db.close()
 
-    def listar(self):
+    def listar(self, nome=''):
         db = get_db()
-        dados = db.execute('SELECT * FROM pacientes').fetchall()
+        if nome:
+            dados = db.execute(
+                'SELECT * FROM pacientes WHERE nome LIKE ?',
+                (f'%{nome}%',)
+            ).fetchall()
+        else:
+            dados = db.execute('SELECT * FROM pacientes').fetchall()
         db.close()
         return dados

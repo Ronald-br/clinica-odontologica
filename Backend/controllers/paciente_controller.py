@@ -14,5 +14,6 @@ def cadastrar():
 
 @paciente_bp.route('/pacientes', methods=['GET'])
 def listar():
-    dados = service.listar()
+    nome = request.args.get('nome', '').strip()
+    dados = service.listar(nome)
     return jsonify(dados)
